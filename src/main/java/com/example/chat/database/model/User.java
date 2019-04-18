@@ -22,21 +22,9 @@ public class User {
     @Column(name = "id")
     private Long id;
 
-    @OneToMany(mappedBy = "from",cascade = CascadeType.ALL)
-    private List<Direction> from = new LinkedList<>();
-
-    @OneToMany(mappedBy = "toUser",cascade = CascadeType.ALL)
-    private List<Direction> toUser = new LinkedList<>();
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    private List<ChatData> chatData = new LinkedList<>();
 
     @Column(name = "username")
     private String username;
-
-    @Column(name = "first_Name")
-    private String firstName;
-
-    @Column(name = "last_Name")
-    private String lastName;
-
-    @Column(name = "email")
-    private String email;
 }
